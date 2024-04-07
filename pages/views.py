@@ -48,7 +48,7 @@ def get_event_revision_count(request):
         filters = dict(request.GET.items())
         event_title_count, event_tag_count = get_rev_count(filters)
         nyears = max_day_limit//365
-        years = [f'{year} year' for year in range(nyears)]
+        years = [f'{year+1} year' for year in range(nyears)]
         default_filters = {
             'timeperiod':  (['1 day', '1 week', '2 weeks', '3 weeks', '1 month', '2 months', '6 months'] + years) [::-1], 
             'time_part': ['day', 'all', 'month', 'year'], 

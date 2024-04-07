@@ -18,7 +18,7 @@ function createBarChart(data, timeperiod) {
     var yValues = [];
     var hoverTexts = [];
 
-    Object.keys(data).forEach(function (event) {
+    Object.keys(data).sort().forEach(function (event) {
         xValues.push(event);
         yValues.push(data[event]['total_count']);
         console.log(data[event])
