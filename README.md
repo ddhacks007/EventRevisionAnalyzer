@@ -2,6 +2,18 @@
 
 Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
 
+## Approach
+
+1. **Revision History Retrieval**: Initially, we use the Wikipedia API to fetch the revision history for a set of Wikipedia titles related to solar events upon the creation of an event. (Note: Revision histories are fetched only at the time of event creation).
+
+2. **Tag Assignment Logic**: After fetching the revisions, tags are assigned based on a variety of factors, including the content of comments, the content added to the revisions, and pre-existing tags within the revisions. The comments are a field within each revision, and we employ an additional API to compare each revision with its predecessor, enabling a detailed analysis beyond merely considering comments and tags. Due to the comparison API requiring approximately 630 milliseconds per call, both the revision fetching and tag assignment processes are made asynchronous using Django-Q to enhance efficiency.
+
+3. **Database Integration**: Both the revisions and their associated tags are integrated into our database, ensuring their storage is organized and they are accessible for further analysis.
+
+4. **User Interface Enhancement**: The user interface displays events along with the count of associated Wikipedia revisions. Users can delve into more details, such as the Wikipedia title and how the tag contributions relate to the total count of revisions for each event.
+
+## Workflow using Architecture Diagram
+
 ## Configuration Parameters
 
 - **Parameter:** `host`  
@@ -14,11 +26,14 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
   **Use:** Used by `CreateEventsOfInterest` script to create event entries in the database.  
   **Location:** Present in `.env` file. Points to the `events_data.csv` file, default location is the `doc` folder.
 - **Parameter:** `titles`  
-  **Use:** Used by `CreateTitlesOfInterest` script to create title entries.  
+  **Use:** Used by `CreateTitlesOfInterest` script to create Wiki title entries.  
   **Location:** Present in `.env` file.
 - **Parameter:** `max_day_limit`  
   **Use:** Provides the `RevisionManager` limit to the date range from the event-date.  
   **Location:** Present in `settings.py` file.
+- **Parameter:** `workers`  
+  **Use:** Provides the number of ASYNC workers you can run in parallel. Workers are responsible for fetching the revision details from the Wiki and assigning tags to the revision.  
+  **Location:** Present in `settings.py` inside the `Q_CLUSTER` dictionary.
 
 Steps to run this project
 
@@ -47,3 +62,5 @@ Before staring the process please run the tests and see if the test cases are pa
 ## Run the script responsible for storing the events from event_data.csv (Please refer to the Configuration Section to run for your own set of Events)
 
 8.) Run `poetry run python3 CreateEventsOfInterest.py`.
+
+## If you feel that it is time consuming for you to run this APP you can navigate to our dashboard below
