@@ -3,6 +3,7 @@ from pages.models.RevisionModel import Revision
 from django.db.models import Count
 from django.db.models import Q, F
 from datetime import timedelta
+from eventrevisionanalyzer.settings import max_day_limit
 import collections
 
 def get_days_from_period(period):
@@ -53,12 +54,10 @@ def group_event_tag_count(data):
 
 def generate_condition(filters):
         conditions = Q(tags__events__date__lt=F('timestamp')) 
-        
-        if 'timeperiod' in filters:
-            filters['timeperiod'] = "1 year" if filters['timeperiod'] == "all" else filters['timeperiod']
-            days_ = get_days_from_period(filters['timeperiod'])
-            print(days_, ' is the days')
-            conditions &= Q(timestamp__lt=F('tags__events__date') + timedelta(days=days_+1))
+        max_year = max_day_limit//365
+        time_part = f"{max_year} year" if filters.get('timeperiod', "all") == "all" else filters['timeperiod']
+        days_ = get_days_from_period(time_part)
+        conditions &= Q(timestamp__lt=F('tags__events__date') + timedelta(days=days_+1))
         if 'event' in filters and filters['event'] != 'all':
             conditions &= Q(tags__events__name=filters['event'])
        

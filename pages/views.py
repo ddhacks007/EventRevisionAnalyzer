@@ -11,6 +11,7 @@ from pages.components.CRUD.Title import create_title
 from django.shortcuts import render
 import json
 from pages.components.Tasks.RevisionFetcher import initiate_rev_fetch
+from eventrevisionanalyzer.settings import max_day_limit
 from collections import defaultdict
 import uuid
 
@@ -46,8 +47,10 @@ def get_event_revision_count(request):
     try:
         filters = dict(request.GET.items())
         event_title_count, event_tag_count = get_rev_count(filters)
+        nyears = max_day_limit//365
+        years = [f'{year} year' for year in range(nyears)]
         default_filters = {
-            'timeperiod':  ['1 day', '1 week', '2 weeks', '3 weeks', '1 month', '2 months', '6 months', '1 year', '2 year'][::-1], 
+            'timeperiod':  (['1 day', '1 week', '2 weeks', '3 weeks', '1 month', '2 months', '6 months'] + years) [::-1], 
             'time_part': ['day', 'all', 'month', 'year'], 
             'title': ['all'] + [title.name for title in Titles.objects.all()], 
             'event': ['all'] + [event.name for event in Event.objects.all()], 
