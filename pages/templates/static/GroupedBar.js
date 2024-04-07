@@ -9,7 +9,7 @@ function getRandomRGBColor() {
 
 function createBarChart(data, timeperiod) {
     var layout = {
-        title: `Bar chart displays Wiki revision count following each Event within ${timeperiod} of the event occurred`,
+        title: ` Wiki revision count for each Event within ${timeperiod} of the event occurred`,
         xaxis: { title: 'Event' },
         yaxis: { title: 'Total Wiki Count' }
     };
@@ -58,7 +58,7 @@ function createBarChart(data, timeperiod) {
 
 function createPieChart(pages, counts, event) {
     var layout = {
-        title: `Pie chart displays Wiki Page Distribution for the ${event} event`,
+        title: `Wiki Page Distribution Across Revisions`,
         xaxis: { title: 'Event' },
         yaxis: { title: 'Total Wiki Count' }
     };
@@ -78,7 +78,7 @@ function createPieChart(pages, counts, event) {
 
 function createDonetChart(tagCount, totalRevCount) {
     var layout = {
-        title: `Donut charts hows Tag Distribution Across Revisions`,
+        title: `Tag Distribution Across Revisions`,
         xaxis: { title: 'Tag' },
         yaxis: { title: 'Total Wiki Count' }
     };
@@ -95,9 +95,6 @@ function createDonetChart(tagCount, totalRevCount) {
         }
     ];
 
-    // Plotly.newPlot('myDiv', data);
-
-    // console.log(data, ' is the data')
     Plotly.newPlot('donutChart', data, layout);
 
 }   
