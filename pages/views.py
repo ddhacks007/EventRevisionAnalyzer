@@ -42,7 +42,7 @@ def setup_event(request):
         return JsonResponse({"message": str(e)}, status=500)
 
 @require_http_methods(["GET"])
-def get_revision_correlation(request):
+def get_event_revision_count(request):
     try:
         filters = dict(request.GET.items())
         event_title_count, event_tag_count = get_rev_count(filters)

@@ -97,6 +97,6 @@ To ensure a smooth experience with this project, please follow the steps outline
   ```
   (Refer to the Configuration Section for customization)
 
-### Additional Resources
+### Access Dashboard
 
-- If running the application seems time-consuming, feel free to explore our dashboard for a more streamlined experience.
+- http://{host}:{port}/event/dashboard
