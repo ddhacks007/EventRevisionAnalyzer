@@ -10,13 +10,10 @@ python = "^3.12"
 django = "^4.1.12"
 pytest = "^8.0.2"
 django-q = "*"
-psycopg = "*"
-psycopg2 = "*"
-psycopg-binary = "*"
-psycopg2-binary = "*"
 requests = "*"
 setuptools = "^69.2.0"
 python-dotenv="*"
+bs4 = "*"
 
 
 [build-system]

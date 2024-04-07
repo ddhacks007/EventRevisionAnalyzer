@@ -1,40 +1,44 @@
 # EventRevisionAnalyzer
 
-A basic boilerplate Django project prepped with poetry and Rollup. It uses the Django project default database SQLite.
+Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
 
-## Setup
+## Configuration Parameters
 
-For history's sake, this setup was based off of the instructions here: https://builtwithdjango.com/blog/basic-django-setup.
+- **Use:** Used by Two Scripts for creating entries for Wiki titles and Events.  
+  **Location:** Present in `.env` file.
+- **Use:** Specifies the port number of the server.  
+  **Location:** Present in `.env` file. Default value is `8000`.
+- **Use:** Used by `CreateEventsOfInterest` script to create event entries in the database.  
+  **Location:** Present in `.env` file. Points to the `events_data.csv` file, default location is the `doc` folder.
+- **Use:** Used by `CreateTitlesOfInterest` script to create title entries.  
+  **Location:** Present in `.env` file.
+- **Use:** Provides the `RevisionManager` limit to the date range from the event-date.  
+  **Location:** Present in `settings.py` file.
 
-1. We only test and develop this base project with Python 3.12 (specified in pyproject.toml). If you can't or don't want to install this version of Python, you can change the version requirement in pyproject.toml. While we can't guarantee other versions' compatibility, it is quite unlikely that recent versions will encounter any issues. You can install the [latest version of Python here](https://www.python.org/downloads/).
+Steps to run this project
 
-2. Install [poetry](https://python-poetry.org/docs/#installation). This allows us to run our project in a virtual environment and will handle the installation of Django and other python libraries.
+1. Run `poetry install` to install dependencies.
 
-3. Run `poetry install` to install dependencies.
+2. Run `poetry run python3 manage.py makemigrations` to generate the migrations
 
-4. Rename `myproject` to whatever you'd like your project to be named. You will want to change the name in `pyproject.toml`, the Django project directory name `myproject/`, `manage.py`, and `settings.py`.
+3. Run `poetry run python3 manage.py migrate` to apply migrations to the database
 
-5. Change `TIME_ZONE` in `settings.py` to your timezone.
+Before staring the process please run the tests and see if the test cases are passed
 
-6. Run `poetry run python manage.py migrate` to initialize your local database.
+4. RUN `poetry run python3 manage.py test --settings=eventrevisionanalyzer.test_settings tests`
 
-7. Create a superuser for your local Django instance. Run `poetry run python manage.py createsuperuser`. Be sure to save your username and password in a responsible location.
+## Run the Async Workers (Django-q)
 
-8. Install [node](https://nodejs.org/en).
+5.) Run `poetry run python3 manage.py qcluster`.
 
-9. Run `npm install`.
+## Run the server
 
-10. Run `npm run build`.
+6.) Run `poetry run python3 manage.py runserver`.
 
-## Running the server
+## Run the script responsible for storing some Wiki Titles (Please refer to the Configuration Section to run for your own titles)
 
-Run `poetry run python manage.py runserver`.
+7.) Run `poetry run python3 CreateTitlesOfInterest.py`.
 
-## Running other Django commands
+## Run the script responsible for storing the events from event_data.csv (Please refer to the Configuration Section to run for your own set of Events)
 
-See Django documentation for other commands, such as generating and applying migrations. Commands can be used as normal, preceded by `poetry run`. For example, see "Running the server" above.
-
-## Running tests
-
-To run python tests, use `poetry run pytest`.
-To run TS/JS tests, use `npm run test`.
+8.) Run `poetry run python3 CreateEventsOfInterest.py`.
