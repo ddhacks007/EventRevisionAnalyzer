@@ -12,7 +12,9 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
 
 4. **User Interface Enhancement**: The user interface displays events along with the count of associated Wikipedia revisions. Users can delve into more details, such as the Wikipedia title and how the tag contributions relate to the total count of revisions for each event.
 
-## Workflow using Architecture Diagram
+## Workflow
+
+![](images/event-creation-workflow.png)
 
 ## Configuration Parameters
 
