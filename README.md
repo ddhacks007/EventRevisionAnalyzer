@@ -1,6 +1,6 @@
 # EventRevisionAnalyzer
 
-Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
+Event-Triggered Wikipedia Edits Analyzer for the Solar Industry (If you want to directly checkout our APP http://ec2-35-171-166-150.compute-1.amazonaws.com:8000/event/dashboard )
 
 ## Approach
 
@@ -40,6 +40,8 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
 To ensure a smooth experience with this project, please follow the steps outlined below:
 
 ### Initial Setup
+
+Install [poetry](https://python-poetry.org/docs/#installation). This allows us to run our project in a virtual environment and will handle the installation of Django and other python libraries.
 
 1. Install dependencies:
 
