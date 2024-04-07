@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-21fse38yqwda1b@)9(j5qvojl(84cu@amooy69w@(foc&%8_-2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -135,5 +135,5 @@ Q_CLUSTER = {
     'orm': 'default',
 }
 
-max_day_limit=365*5
+max_day_limit=365*2
 batch_size=50

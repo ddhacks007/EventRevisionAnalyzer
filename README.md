@@ -31,7 +31,7 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry (If you want to 
   **Use:** Used by `CreateTitlesOfInterest` script to create Wiki title entries.  
   **Location:** Present in `.env` file.
 - **Parameter:** `max_day_limit`  
-  **Use:** Configures the RevisionManager to retrieve revisions starting from the event date, covering a default range of 5 years, specified in days.
+  **Use:** Configures the RevisionManager to retrieve revisions starting from the event date, covering a default range of 2 years, specified in days.
   **Location:** Present in `settings.py` file.
 - **Parameter:** `workers`  
   **Use:** Provides the number of ASYNC workers you can run in parallel. Workers are responsible for fetching the revision details from the Wiki and assigning tags to the revision.  
