@@ -135,4 +135,5 @@ Q_CLUSTER = {
     'orm': 'default',
 }
 
-max_day_limit=365*2
+max_day_limit=365*5
+batch_size=50
