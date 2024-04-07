@@ -37,32 +37,66 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
   **Use:** Provides the number of ASYNC workers you can run in parallel. Workers are responsible for fetching the revision details from the Wiki and assigning tags to the revision.  
   **Location:** Present in `settings.py` inside the `Q_CLUSTER` dictionary.
 
-Steps to run this project
+To ensure a smooth experience with this project, please follow the steps outlined below:
 
-1. Run `poetry install` to install dependencies.
+### Initial Setup
 
-2. Run `poetry run python3 manage.py makemigrations` to generate the migrations
+1. Install dependencies:
 
-3. Run `poetry run python3 manage.py migrate` to apply migrations to the database
+   ```sh
+   poetry install
+   ```
 
-Before staring the process please run the tests and see if the test cases are passed
+2. Generate database migrations:
 
-4. RUN `poetry run python3 manage.py test --settings=eventrevisionanalyzer.test_settings tests`
+   ```sh
+   poetry run python3 manage.py makemigrations
+   ```
 
-## Run the Async Workers (Django-q)
+3. Apply migrations to the database:
+   ```sh
+   poetry run python3 manage.py migrate
+   ```
 
-5.) Run `poetry run python3 manage.py qcluster`.
+### Testing
 
-## Run the server
+- Before proceeding, run the tests to ensure everything is set up correctly:
+  ```sh
+  poetry run python3 manage.py test --settings=eventrevisionanalyzer.test_settings tests
+  ```
 
-6.) Run `poetry run python3 manage.py runserver`.
+### Running the Application
 
-## Run the script responsible for storing some Wiki Titles (Please refer to the Configuration Section to run for your own titles)
+#### Async Workers with Django-q
 
-7.) Run `poetry run python3 CreateTitlesOfInterest.py`.
+- Start the Django-Q cluster:
+  ```sh
+  poetry run python3 manage.py qcluster
+  ```
 
-## Run the script responsible for storing the events from event_data.csv (Please refer to the Configuration Section to run for your own set of Events)
+#### Web Server
 
-8.) Run `poetry run python3 CreateEventsOfInterest.py`.
+- Launch the web server:
+  ```sh
+  poetry run python3 manage.py runserver
+  ```
 
-## If you feel that it is time consuming for you to run this APP you can navigate to our dashboard below
+#### Data Initialization Scripts
+
+- **Wiki Titles**: To store specific Wiki titles, run:
+
+  ```sh
+  poetry run python3 CreateTitlesOfInterest.py
+  ```
+
+  (Refer to the Configuration Section for customization)
+
+- **Event Data**: To import events from `event_data.csv`, execute:
+  ```sh
+  poetry run python3 CreateEventsOfInterest.py
+  ```
+  (Refer to the Configuration Section for customization)
+
+### Additional Resources
+
+- If running the application seems time-consuming, feel free to explore our dashboard for a more streamlined experience.
