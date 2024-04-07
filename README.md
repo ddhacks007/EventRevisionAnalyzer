@@ -4,15 +4,20 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry
 
 ## Configuration Parameters
 
-- **Use:** Used by Two Scripts for creating entries for Wiki titles and Events.  
+- **Parameter:** `host`  
+  **Use:** Used by Two Scripts for creating entries for Wiki titles and Events.  
   **Location:** Present in `.env` file.
-- **Use:** Specifies the port number of the server.  
+- **Parameter:** `port`  
+  **Use:** Specifies the port number of the server.  
   **Location:** Present in `.env` file. Default value is `8000`.
-- **Use:** Used by `CreateEventsOfInterest` script to create event entries in the database.  
+- **Parameter:** `event_data_path`  
+  **Use:** Used by `CreateEventsOfInterest` script to create event entries in the database.  
   **Location:** Present in `.env` file. Points to the `events_data.csv` file, default location is the `doc` folder.
-- **Use:** Used by `CreateTitlesOfInterest` script to create title entries.  
+- **Parameter:** `titles`  
+  **Use:** Used by `CreateTitlesOfInterest` script to create title entries.  
   **Location:** Present in `.env` file.
-- **Use:** Provides the `RevisionManager` limit to the date range from the event-date.  
+- **Parameter:** `max_day_limit`  
+  **Use:** Provides the `RevisionManager` limit to the date range from the event-date.  
   **Location:** Present in `settings.py` file.
 
 Steps to run this project
