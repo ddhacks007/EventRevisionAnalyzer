@@ -58,7 +58,7 @@ function createBarChart(data, timeperiod) {
 
 function createPieChart(pages, counts, event) {
     var layout = {
-        title: `Wiki Page Distribution Across Revisions`,
+        title: `Wiki Page Distribution`,
         xaxis: { title: 'Event' },
         yaxis: { title: 'Total Wiki Count' }
     };
@@ -78,7 +78,7 @@ function createPieChart(pages, counts, event) {
 
 function createDonetChart(tagCount, totalRevCount) {
     var layout = {
-        title: `Tag Distribution Across Revisions`,
+        title: `Tag Distribution`,
         xaxis: { title: 'Tag' },
         yaxis: { title: 'Total Wiki Count' }
     };
