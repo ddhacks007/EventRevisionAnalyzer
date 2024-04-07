@@ -32,7 +32,7 @@ def setup_event(request):
         data['date'] = datetime.strptime(data.get('date'), "%m/%d/%Y")
         create_event(data)
         for title in Titles.objects.all():
-            args = {'title': title.name, "event_date": data['date']}
+            args = {'title': title.name, "event_date": data['date'], 'event_name': data['name']}
             print('enquing data..')
             async_task(initiate_rev_fetch, args, task_name=uuid.uuid4())
         

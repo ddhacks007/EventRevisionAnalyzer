@@ -51,7 +51,7 @@ class TagManager:
     def assign_tags_to_revisions(self, revisions, tags):
         revision_tags = collections.defaultdict(list)
         for i, rev in enumerate(revisions):
-            print(i)
+            # print(i)
             if 'comment' in rev:
                 self.assign_tags_on_comment(revision_tags, rev, tags)
             
