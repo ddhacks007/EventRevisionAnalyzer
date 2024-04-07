@@ -1,0 +1,8 @@
+django
+django-q
+psycopg
+psycopg2
+psycopg-binary
+psycopg2-binary
+requests
+pandas

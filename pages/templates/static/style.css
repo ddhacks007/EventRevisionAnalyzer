@@ -1,0 +1,33 @@
+.grid-container {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.grid-item {
+    flex: 1; /* Each item will take equal width */
+    padding: 10px; /* Space around content */
+}
+select {
+    width: 100%; /* Make dropdowns expand to fill their container */
+    padding: 5px; /* Padding inside the dropdown */
+    box-sizing: border-box; /* Padding included in width calculation */
+}
+
+.label {
+    font-weight: 900;
+}
+
+.message-component {
+    background-color: #f5f5f5;
+    border-left: 4px solid #007bff;
+}
+
+.message-heading {
+    margin-top: 0;
+    color: #333;
+}
+
+.message-description {
+    color: #666;
+}

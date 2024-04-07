@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "eventrevisionanalyzer"
+version = "0.1.0"
+description = "This is a template project"
+authors = ["Morgan Tenney <morgan.tenney@swiftsolar.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^4.1.12"
+pytest = "^8.0.2"
+django-q = "*"
+psycopg = "*"
+psycopg2 = "*"
+psycopg-binary = "*"
+psycopg2-binary = "*"
+requests = "*"
+setuptools = "^69.2.0"
+python-dotenv="*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

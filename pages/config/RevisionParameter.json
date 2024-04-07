@@ -1,0 +1,9 @@
+{
+    "action": "query",
+    "prop": "revisions",
+    "rvprop": "ids|timestamp|user|size|sha1|slotsha1|slotsize|size",
+    "rvslots": "main",
+    "formatversion": "2",
+    "format": "json",
+    "rvlimit": "max"
+}

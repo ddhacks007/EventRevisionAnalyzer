@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css"/> 
+    <link rel="stylesheet" type="text/css" href="/static/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="/static/semantic.min.js"></script>
+    <title>Events VS Revision (Frequency) </title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="/static/GroupedBar.js"></script>
+    <script src="/static/SelectUtilities.js"></script>
+    <script src="/static/Timeline.js"></script>
+
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="ui message" style="margin: 2rem;">
+        <div class="header">
+            Understanding Wikipedia's Revision Dynamics Around Solar Events
+        </div>
+        <ul class="list">
+          <li>This interactive chart illuminates the impact of solar events on Wikipedia's edit history, showcasing the frequency of revisions made after the occurrence of each event. Explore how significant solar phenomena catalyze changes in the collective knowledge base. <a href="/event/manual">(If you are new to this application kindly go to the Help manual) </a></li>
+        </ul>
+      </div>
+    <div class="grid-container" >
+        <div class="grid-item">
+            <label for="event" class="label">Event</label>
+            <select id="event"></select>
+        </div>
+        <div class="grid-item">
+            <label for="timeperiod" class="label">Time Period</label>
+            <select id="timeperiod"></select>
+        </div>
+       
+       
+      
+    </div>
+    <div id="barChart" ></div>
+
+    <div class="grid-container" >
+        <div class="grid-item">
+
+        <div id="pieChart" >
+
+        </div></div>
+        <div class="grid-item">
+
+            <div id="donutChart" >
+    
+            </div></div>
+    </div>
+
+
+    
+
+
+    <script>
+        const eventTitleCount = JSON.parse('{{ eventTitle | safe }}');
+        const filters = JSON.parse('{{filters | safe }}');
+        const eventTagCount = JSON.parse('{{eventTag | safe}}');
+
+        console.log(eventTitleCount, eventTagCount)
+        var searchParams = new URLSearchParams(window.location.search);
+
+        var timeperiod = searchParams.get('timeperiod');
+        createBarChart(eventTitleCount,(timeperiod ===null || timeperiod == 'all')?'1year': timeperiod);
+        addOptions('timeperiod', filters['timeperiod']);
+        addOptions('event', filters['event']);
+
+        setDefaultValues()
+
+        document.getElementById('timeperiod').addEventListener('change',  (event) => updateQueryParams(event.target));
+        document.getElementById('event').addEventListener('change', (event) => updateQueryParams(event.target));
+
+    </script>
+</body>
+</html>

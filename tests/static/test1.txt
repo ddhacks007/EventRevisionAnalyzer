@@ -1,0 +1,94 @@
+<tr>
+  <td colspan="2" class="diff-lineno">Line 22:</td>
+  <td colspan="2" class="diff-lineno">Line 22:</td>
+</tr>
+<tr>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-deleted"><br /></td>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-added"><br /></td>
+</tr>
+<tr>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-deleted"><div>Assemblies of solar cells are used to make [[Solar panel|solar modules]] that generate electrical power from [[sunlight]], as distinguished from a "solar thermal module" or "solar hot water panel". A solar array generates [[solar power]] using [[solar energy]].</div></td>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-added"><div>Assemblies of solar cells are used to make [[Solar panel|solar modules]] that generate electrical power from [[sunlight]], as distinguished from a "solar thermal module" or "solar hot water panel". A solar array generates [[solar power]] using [[solar energy]].</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>===ADVANTAGES===</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Renewable Energy Source. Among all the benefits of solar panels, the most important thing is that solar energy is a truly renewable energy source. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Reduces Electricity Bills. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Diverse Applications. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Low Maintenance Costs. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Technology Development.</div></td>
+</tr>
+<tr>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-deleted"><br /></td>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-added"><br /></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>===DISADVANTAGES===</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Cost. The initial cost of purchasing a solar system is fairly high. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Weather-Dependent. Although solar energy can still be collected during cloudy and rainy days, the efficiency of the solar system drops. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Solar Energy Storage Is Expensive. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Uses a Lot of Space. ...</div></td>
+</tr>
+<tr>
+  <td colspan="2" class="diff-empty diff-side-deleted"></td>
+  <td class="diff-marker" data-marker="+"></td>
+  <td class="diff-addedline diff-side-added"><div>Associated with Pollution.</div></td>
+</tr>
+<tr>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-deleted"><div>=== Cells, modules, panels and systems ===</div></td>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-added"><div>=== Cells, modules, panels and systems ===</div></td>
+</tr>
+<tr>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-deleted"><div>{{Main|Photovoltaic system}}</div></td>
+  <td class="diff-marker"></td>
+  <td class="diff-context diff-side-added"><div>{{Main|Photovoltaic system}}</div></td>
+</tr>
