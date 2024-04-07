@@ -9,9 +9,9 @@ function getRandomRGBColor() {
 
 function createBarChart(data, timeperiod) {
     var layout = {
-        title: ` Wiki revision count for each Event within ${timeperiod} of the event occurred`,
+        title: ` Wiki revision count for each Event within ${timeperiod} of the event occurred (click on the bar for further drill down)`,
         xaxis: { title: 'Event' },
-        yaxis: { title: 'Total Wiki Count' }
+        yaxis: { title: 'Total Wiki Revisions' }
     };
     var traces = [];
     var xValues = [];

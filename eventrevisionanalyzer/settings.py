@@ -135,4 +135,4 @@ Q_CLUSTER = {
     'orm': 'default',
 }
 
-max_day_limit=50
+max_day_limit=365*2

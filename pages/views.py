@@ -47,7 +47,7 @@ def get_event_revision_count(request):
         filters = dict(request.GET.items())
         event_title_count, event_tag_count = get_rev_count(filters)
         default_filters = {
-            'timeperiod':  ['1 day', '1 week', '2 weeks', '3 weeks', '1 month', '2 months', '6 months', '1 year'][::-1], 
+            'timeperiod':  ['1 day', '1 week', '2 weeks', '3 weeks', '1 month', '2 months', '6 months', '1 year', '2 year'][::-1], 
             'time_part': ['day', 'all', 'month', 'year'], 
             'title': ['all'] + [title.name for title in Titles.objects.all()], 
             'event': ['all'] + [event.name for event in Event.objects.all()], 
