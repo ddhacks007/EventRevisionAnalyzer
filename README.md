@@ -10,7 +10,7 @@ Event-Triggered Wikipedia Edits Analyzer for the Solar Industry (If you want to 
 
 3. **Database Integration**: Both the revisions and their associated tags are integrated into our database, ensuring their storage is organized and they are accessible for further analysis.
 
-4. **User Interface Enhancement**: The user interface displays events along with the count of associated Wikipedia revisions by using revision-tag and event-tag relations. Users can delve into more details, such as the Wikipedia title and how the tag contributions relate to the total count of revisions for each event.
+4. **User Interface Enhancement**: The user interface displays events along with the count of associated Wikipedia revisions by using revision-tag and event-tag relations. Users can delve into more details, such as the Revision distribution across Titles and Tags for an event.
 
 ## Workflow
 
