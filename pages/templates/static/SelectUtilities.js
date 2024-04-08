@@ -6,6 +6,18 @@ function addOptions(selectElementId, options) {
     });
 }
 
+function roundNumber(pf) {
+    pf = pf * 100;
+    value = parseFloat(pf.toFixed(1));
+    if (Number.isInteger(value)) {
+        console.log(value)
+        return parseInt(value);
+    } else {
+        console.log(value)
+        return value;
+    }
+}
+
 function updateQueryParams(triggeringElement) {
     const value = triggeringElement.value;
     const queryParams = new URLSearchParams(window.location.search);

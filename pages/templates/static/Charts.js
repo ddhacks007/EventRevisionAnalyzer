@@ -83,12 +83,16 @@ function createPieChart(pages, counts, event) {
 function createDonetChart(tagCount, totalRevCount) {
     var totalRevSticker = `Total Revision Count: ${totalRevCount} `
     var tags = Object.keys(tagCount)
+    percentages = tags.map((tag) => `${tagCount[tag]} (${roundNumber(tagCount[tag] / totalRevCount)}%)`)
+
     var trace1 = {
         x: Object.keys(tagCount),
         y: tags.map((tag) => tagCount[tag]),
         name: 'Tag',
         type: 'bar',
-        hovertemplate: totalRevSticker + ' <br> %{x}: %{y} <extra></extra>'
+        hovertemplate: totalRevSticker + ' <br> %{x}: %{y}  <extra></extra>',
+        hoverinfo: percentages.map(String),
+        textposition: 'auto',
 
     };
 
@@ -97,7 +101,8 @@ function createDonetChart(tagCount, totalRevCount) {
         y: tags.map((tag) => totalRevCount - tagCount[tag]),
         hoverinfo: 'none',
         name: 'Total Revision Count',
-        type: 'bar'
+        type: 'bar',
+
     };
 
     var data = [trace1, trace2];
