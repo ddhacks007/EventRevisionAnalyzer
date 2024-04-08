@@ -81,24 +81,30 @@ function createPieChart(pages, counts, event) {
 }
 
 function createDonetChart(tagCount, totalRevCount) {
-    var layout = {
-        title: `Rivision distribution across Event Tags`,
-        xaxis: { title: 'Tag' },
-        yaxis: { title: 'Total Wiki Count' }
+    var totalRevSticker = `Total Revision Count: ${totalRevCount} `
+    var tags = Object.keys(tagCount)
+    var trace1 = {
+        x: Object.keys(tagCount),
+        y: tags.map((tag) => tagCount[tag]),
+        name: 'Tag',
+        type: 'bar',
+        hovertemplate: totalRevSticker + ' <br> %{x}: %{y} <extra></extra>'
+
     };
 
-    var counts = Object.keys(tagCount).map((tag) => tagCount[tag]);
-    var labels = Object.keys(tagCount).map((tag) => tag);
+    var trace2 = {
+        x: tags,
+        y: tags.map((tag) => totalRevCount - tagCount[tag]),
+        hoverinfo: 'none',
+        name: 'Total Revision Count',
+        type: 'bar'
+    };
 
-    var data = [
-        {
-            values: counts,
-            labels: labels,
-            type: 'pie',
+    var data = [trace1, trace2];
 
-        }
-    ];
+    var layout = { barmode: 'stack', 'title': 'Rivision distribution across Tags' };
 
     Plotly.newPlot('donutChart', data, layout);
+
 
 }   
