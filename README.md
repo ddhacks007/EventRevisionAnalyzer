@@ -112,4 +112,4 @@ Install [poetry](https://python-poetry.org/docs/#installation). This allows us t
 - **Timeperiod**: You can set time period till you want to fetch revision-count from the start of the event.
 - **BarChart**: Displays the Revision Count for Each Event
 - **PieChart(Revision Distribution Across Pages)**: On Selecting the Event you can get the Revision distribution across Pages.
-- **PieChart(Revision Distribution Across Tags)**: On Selecting the Event you can get the Revision distribution across the tags associated with the event.
+- **Stacked Bar Chart(Revision Distribution Across Tags)**: On Selecting the Event you can get the Revision distribution across the tags associated with the event.
