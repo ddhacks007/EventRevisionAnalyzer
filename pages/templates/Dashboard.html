@@ -71,7 +71,8 @@
         var searchParams = new URLSearchParams(window.location.search);
 
         var timeperiod = searchParams.get('timeperiod');
-        createBarChart(eventTitleCount,(timeperiod ===null || timeperiod == 'all')?'1year': timeperiod);
+
+        createBarChart(eventTitleCount, (timeperiod ===null)?filters['timeperiod'][0]: timeperiod);
         addOptions('timeperiod', filters['timeperiod']);
         addOptions('event', filters['event']);
 
